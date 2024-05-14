@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smile</title> 
+    <style> 
+      canvas { 
+        border: 1px solid #000; 
+      } 
+    </style> 
+</head>
+
+<body> 
+  <canvas id="myCanvas" width="400" height="400"></canvas> 
+  <script> 
+    const canvas = document.getElementById('myCanvas'); 
+    const ctx = canvas.getContext('2d'); 
+ 
+    // Load sad face image 
+    const sadFace = new Image(); 
+    sadFace.src = 'Resources/sad.png'; 
+ 
+    // Load smiley face image 
+    const happyFace = new Image(); 
+    happyFace.src = 'Resources/smiley.png'; 
+ 
+    // Initial state 
+    let isMouseDown = false; 
+ 
+    // Draw initial sad face on page load 
+    sadFace.onload = function() { 
+      ctx.drawImage(sadFace, 0, 0, canvas.width, canvas.height); 
+    }; 
+ 
+    // Event listeners for mouse down and up 
+    canvas.addEventListener('mousedown', function(event) { 
+      isMouseDown = true; 
+      drawHappyFace(); 
+    }); 
+ 
+    canvas.addEventListener('mouseup', function(event) { 
+      isMouseDown = false; 
+      drawSadFace(); 
+    }); 
+ 
+    // Function to draw sad face 
+    function drawSadFace() { 
+      ctx.clearRect(0, 0, canvas.width, canvas.height); 
+      ctx.drawImage(sadFace, 0, 0, canvas.width, canvas.height); 
+    } 
+ 
+    // Function to draw happy face and scale width on mouse down 
+    function drawHappyFace() { 
+      ctx.clearRect(0, 0, canvas.width, canvas.height); 
+      ctx.drawImage(happyFace, 0, 0, canvas.width, canvas.height); 
+      if (isMouseDown) { 
+        ctx.drawImage(happyFace, 0, 0, canvas.width * 1, canvas.height); 
+      } 
+    } 
+  </script> 
+</body> 
+</html>

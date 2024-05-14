@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag And Drop</title>
+</head>
+<body>
+    <div ondrop="drop(this)" ondragover="event.preventDefault()" 
+    style="width: 100px;height: 100px; border: 1px solid rgb(173, 34, 80);">
+    </div>
+    <img src="Resources/Dalia.jpeg" draggable="true" ondragstart="dragStart(this)" width="100px" height="100px">
+
+    <script>
+          var element;
+
+        function dragStart(img) {
+            element = img
+        }
+
+        function drop(div) {
+           div.appendChild(element)
+        }
+    </script>
+    
+</body>
+</html>

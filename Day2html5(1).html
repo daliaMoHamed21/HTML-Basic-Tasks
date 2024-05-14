@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Over</title>
+</head>
+<body>
+    <svg>
+       <circle cx="100px" cy="100px" r="40px" fill="Grey" stroke="red" stroke-width="2px" onmouseover="mouseOver(this)" onmousedown="mouseDown(this)" onmouseup="mouseUp(this)"/>
+    </svg>
+    <script>
+        function mouseOver(circle){
+            circle.style.fill="black";
+            circle.style.r="30";
+        }
+
+        function mouseDown (circle){
+            circle.style.fill="red";
+            circle.style.r="50";
+        }
+        function mouseUp(circle){
+            circle.style.fill="blue";
+            circle.style.r="40";
+            alert("Hello! I am an alert box!");
+        }
+    </script>
+    
+</body>
+</html>

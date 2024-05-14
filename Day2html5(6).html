@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps</title>
+</head>
+<button onclick="getPos()">Get Location On Map</button>
+<body>
+    
+    <script>
+        function getPos() {
+            navigator.geolocation.getCurrentPosition(getLongAndLat)
+            console.log("you get location sucess")
+        }
+        var long = 0;
+        var lat = 0;
+
+        function getLongAndLat(geo) {
+            long = geo.coords.longitude;
+            lat = geo.coords.latitude;
+            console.log(long)
+            console.log(lat);
+            var url = "http://maps.google.com/maps?q=" + lat + "," + long;
+            window.open(url)
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw Circle</title>
+</head>
+<body>
+    <svg width="200px" height="200px">
+        <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color: rgb(105, 105, 105); stop-opacity:.5"></stop>
+                <stop offset="50%" style="stop-color: rgb(212, 19, 135); stop-opacity:.5"></stop>
+                <stop offset="100%" style="stop-color: rgb(0, 0, 0); stop-opacity:.5"></stop>
+            </linearGradient>
+        </defs>
+        <circle cx="100px" cy="100px" r="40px"  stroke="gray" stroke-width="1px" fill="url(#gradient)" />
+        <text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle" fill="white" font-family="Arial" font-size="8">
+            Dalia Mohamed
+        </text>
+    </svg>
+</body>
+</html>

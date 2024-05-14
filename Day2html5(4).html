@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinting Program</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="drawCanvas" width="600" height="400" ></canvas>
+    <script> 
+        
+        document.addEventListener("DOMContentLoaded", function() {
+        const canvas = document.getElementById('drawCanvas');
+        const ctx = canvas.getContext('2d');
+    
+        let isDrawing = false;
+        canvas.addEventListener('mousedown', function(event) {
+            isDrawing = true;
+            draw(event);
+        });
+    
+        canvas.addEventListener('mousemove', function(event) {
+            if (isDrawing) {
+                draw(event);
+            }
+        });
+    
+        canvas.addEventListener('mouseup', function() {
+            isDrawing = false;
+        });
+    
+        canvas.addEventListener('mouseleave', function() {
+            isDrawing = false;
+        });
+    
+        function draw(event) {
+            const rect = canvas.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+    
+            if (event.buttons === 1) { 
+                // Left mouse button
+                ctx.fillStyle = 'black';
+
+            }
+            else if (event.buttons === 2) { 
+                // Right mouse button
+                ctx.fillStyle = 'white';
+            } 
+            else {
+                return;
+            }
+    
+            ctx.beginPath();
+            ctx.arc(x, y, 5, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    });
+    </script>
+</body>
+</html>
