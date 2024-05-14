@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin: auto;
+            padding: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img class="star" star_click="0" onmouseover="myhover(this)" onmouseout="outhover(this)"
+            onclick="changeclr(this)" src="Resources/empty_star.png">
+        <img class="star" star_click="0" onmouseover="myhover(this)" onmouseout="outhover(this)"
+            onclick="changeclr(this)" src="Resources/empty_star.png">
+        <img class="star" star_click="0" onmouseover="myhover(this)" onmouseout="outhover(this)"
+            onclick="changeclr(this)" src="Resources/empty_star.png">
+        <img class="star" star_click="0" onmouseover="myhover(this)" onmouseout="outhover(this)"
+            onclick="changeclr(this)" src="Resources/empty_star.png">
+        <img class="star" star_click="0" onmouseover="myhover(this)" onmouseout="outhover(this)"
+            onclick="changeclr(this)" src="Resources/empty_star.png">
+
+
+    </div>
+    <script>
+        let stars = document.querySelectorAll(".star")
+
+        let empty_star = "Resources/Filled_star.png";
+        let Filled_star = "Resources/Filled_star.png";
+
+        function changeclr(img) {
+            let y = Array.from(stars).indexOf(img) + 1;
+            if (img.getAttribute("star_click") == "0") {
+                for (let i = 0; i < y; i++) {
+                    stars[i].src = Filled_star;
+                    stars[i].setAttribute("star_click", "1");
+                }
+            } else {
+                for (let i = y; i < stars.length; i++) {
+                    stars[i].src = empty_star;
+                    stars[i].setAttribute("star_click", "0");
+                }
+            }
+        }
+
+
+        function myhover(img) {
+            let y = Array.from(stars).indexOf(img) + 1;
+            if (img.getAttribute("star_click") == "0") {
+                for (let i = 0; i < y; i++) {
+
+                    if (stars[i].getAttribute("star_click") == "0"){
+                        stars[i].src = Filled_star;
+                    }
+
+                }
+            }
+        }
+
+        function outhover(img) {
+            let y = Array.from(stars).indexOf(img) + 1;
+            if (img.getAttribute("star_click") == "0") {
+                for (let i = 0; i < y; i++) {
+                    if (stars[i].getAttribute("star_click") == "0"){
+                        stars[i].src = empty_star;
+                    }
+
+                }
+            }
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+.star-rating {
+    width: 30px;
+    height: 30px;
+    background-image: url('Images/empty_star.png');
+    background-size: cover;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.star-rating.filled {
+    background-image: url('Images/Filled_star.png');
+}
