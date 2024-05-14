@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <style>
+        header {
+            text-align: center;
+            color: white;
+            padding-top: 10px;
+            height: 50px;
+            background-color:  rgb(25, 121, 137);
+        }
+        
+        nav {
+            text-align: center;
+            color: black;
+            padding-top: 10px;
+            height: 50px;
+            background-color: rgb(228, 247, 250);
+        }
+        section {
+            text-align: center;
+            color: white;
+            height: 100px;
+            width: 70%;
+            float: left;
+            background-color: rgb(25, 121, 137);
+            margin: 0px;
+        }
+        aside {
+            text-align: center;
+            color: white;
+            padding-top: 10px;
+            float: right;
+            height: 200px;
+            width: 30%;
+            background-color:   rgb(85, 86, 86);
+        }
+        article {
+            text-align: center;
+            color: black;
+            padding-top: 10px;
+            height: 100px;
+            width: 70%;
+            float: left;
+            background-color:  rgb(228, 247, 250);
+        }
+    
+
+        .clear {
+            clear: both;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            padding-top: 10px;
+            height: 50px;
+            background-color: rgb(25, 121, 137);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>This is header</h2>
+    </header>
+
+    <nav>
+        <h3>This is nav</h3>
+    </nav>
+    <section>
+        This is section
+    </section>
+
+    <aside>
+        This sidebar
+    </aside>
+    
+    <article>
+        This is artical 
+    </article>
+
+    <div class="clear"></div>
+    <br>
+    <div class="audio">
+            <audio  controls>
+              <source src="./Resources/audio.mp3" type="audio/ogg">
+              <source src="./Resources/audio.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <br>
+
+            <video id="video" controls>
+                <source  src="Resources/Test (2).mp4">
+                <source src="Resources/Test (2).mp4">
+                <source src="Resources/Test (2).mp4">
+            </video>
+    <footer>This is footer</footer>
+    <meter value="9" low="10" optimum="31" high="30" min="0" max="40"></meter> 
+    <br>
+    <progress id="progress" value="5" max="10"></progress>
+    <br>
+    <time datetime="2001-05-19 10:00:00">19 may 2023 03:00:00</time>
+    <br>
+    <mark>Welcome to my test page</mark>
+</body>
+</html>
